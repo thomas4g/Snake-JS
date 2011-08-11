@@ -1,0 +1,90 @@
+﻿  #fieldEl {
+    background-color:#ccc;
+    width:500px;
+    height:500px;
+    position:relative;
+    margin:30px 0px 30px 170px;
+    }
+  .block {
+    position:absolute;
+    left:0;
+    top:0;
+    display:block;
+    width:20px;
+    height:20px;
+    background-color:#000;
+    border:1px solid #ccc;
+  }
+  .food
+  {
+    position:absolute;
+    background-color:#ff0;
+    width:20px;
+    height:20px;
+  }
+  .head {
+    background:red; 
+    z-index:5;
+  }
+  .head:before {
+    color:#fff;
+    content:"-_-";
+    
+  }
+  .wall {
+    background-color:#444;
+    border:none;
+  }
+  #info {
+    float:left;
+    width:130px;
+   
+  }
+  #lengthEl, #hiscoreEl
+  {
+    
+    font-family:Impact;
+   font-size:20px;
+  }
+  #score, #hiscore
+  {
+    display:block;
+    margin-top:-5px;
+    -webkit-text-stroke:3px black;
+    color:red;
+    font-size:75px;
+    text-align:center;
+}
+  button 
+  {
+    color:#fff;
+    background-color:#f00;
+    border:1px solid black;
+    padding:2px 5px;
+    font-size:1.3em;
+    margin:5px;
+   
+}
+  #youlose {
+    position:absolute;
+    display:block;
+    z-index:10;
+    background-color:rgba(0,0,0,.7);
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    font-family:Impact;
+    color:white;
+    text-align:center;
+    padding-top:100px;
+    font-size:120px;
+    -webkit-text-stroke:2px #f00;
+    display:none;
+  }
+  #tryagain {
+    font-size:50px;
+      display:block;
+    -webkit-text-stroke:2px #500;
+    cursor:pointer;
+  }
