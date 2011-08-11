@@ -184,10 +184,10 @@
     Game.render();
     //wire up the key events to change teh snake's direction
     document.onkeydown = function(e) {
-      if(e.keyCode === 37) Game.snake.direction="left";
-      else if(e.keyCode === 38) Game.snake.direction="up";
-      else if(e.keyCode === 39) Game.snake.direction="right";
-      else Game.snake.direction="down";
+      if(e.keyCode === 37 || e.keyCode === 65) Game.snake.direction="left";
+      else if(e.keyCode === 38 || e.keyCode === 87) Game.snake.direction="up";
+      else if(e.keyCode === 39 || e.keyCode === 68) Game.snake.direction="right";
+      else if(e.keyCode === 40 || e.keyCode === 83) Game.snake.direction="down";
     };
     //...and the click events
     document.getElementById("restart").onclick = Game.restart;
