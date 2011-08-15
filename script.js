@@ -99,6 +99,7 @@
         var segment = Object.create(Game.block);
         segment.size = s;
         segment.position = pos;
+        segment.colission = function() {Game.lost = true;}
       //add it to the snake and the Game blocks
         Game.snake.segments.push(segment); 
         Game.blocks.push(segment);
