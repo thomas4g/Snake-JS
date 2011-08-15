@@ -91,6 +91,7 @@
         Game.snake.addSegment(s,{x:i,y:Math.floor(Game.board.height/s/2)});
       }
       Game.snake.segments[0].style = "head block";
+      Game.snake.segments[0].collision = function(){};
     },
     //grow the snake! 
     addSegment: function(s,pos) 
