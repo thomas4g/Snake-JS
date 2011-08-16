@@ -154,17 +154,8 @@
   start: function() {
     Game.update();
    },
-  //You do know what init stands for, right?
-  init: function() {
-    //display current hiscore
-    var hsel = document.getElementById("hiscore");
-    if(localStorage.getItem("hiscore") > 0) hsel.innerHTML = localStorage.getItem("hiscore");
-    else hsel.innerHTML = 0;
-    //set up the snake with three segments, sized @ 20, ready to move right.
-    Game.snake.init(3,20, "right");
-    //Init the board.
-    Game.board.init(20);
-    //Yum.
+   makeFood: function() {
+    //Yum
     var food = Object.create(Game.block);
     food.size = 20;
     //style this as food so it's visually different.
@@ -184,6 +175,19 @@
     };
     //add the food to the blocks
     Game.blocks.push(food);
+   },
+   //You do know what init stands for, right?
+  init: function() {
+    //display current hiscore
+    var hsel = document.getElementById("hiscore");
+    if(localStorage.getItem("hiscore") > 0) hsel.innerHTML = localStorage.getItem("hiscore");
+    else hsel.innerHTML = 0;
+    //set up the snake with three segments, sized @ 20, ready to move right.
+    Game.snake.init(3,20, "right");
+    //Init the board.
+    Game.board.init(20);
+    Game.makeFood();
+    Game.makeFood();
     //do an initial render
     Game.render();
     //wire up the key events to change teh snake's direction
