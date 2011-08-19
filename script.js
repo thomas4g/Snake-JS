@@ -237,6 +237,7 @@
     Game.blocks = []; //clear blocks 
     Game.snake.segments = []; //clear snake 
     Game.snake.direction = ""; //clear direction
+    Game.snake.grow = 0; //clear growing
     Game.board.clear();  //clear board
     Game.init(parseInt(document.getElementById("foodNum").value,10));
     Game.start();
