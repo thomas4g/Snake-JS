@@ -177,7 +177,7 @@
     Game.blocks.push(food);
    },
    //You do know what init stands for, right?
-  init: function() {
+  init: function(foodNum) {
     //display current hiscore
     var hsel = document.getElementById("hiscore");
     if(localStorage.getItem("hiscore") > 0) hsel.innerHTML = localStorage.getItem("hiscore");
@@ -186,8 +186,11 @@
     Game.snake.init(3,20, "right");
     //Init the board.
     Game.board.init(20);
+    if(foodNum === -1) foodNum = 1;
+    for(var i = 0;i<foodNum;i++) {
     Game.makeFood();
-    Game.makeFood();
+    }
+    }
     //do an initial render
     Game.render();
     //wire up the key events to change teh snake's direction
@@ -235,13 +238,15 @@
     Game.snake.segments = []; //clear snake 
     Game.snake.direction = ""; //clear direction
     Game.board.clear();  //clear board
-    Game.init();
+    Game.init(parseInt(document.getElementById("foodNum").value,10));
     Game.start();
   },
   timer:0 //timer to hold the update function interval
 }; 
 window.onload = function() {
-Game.init();
+document.getElementById("submit").onclick = function() {
+Game.init(parseInt(document.getElementById("foodNum").value,10));
+};
 };
 
 
