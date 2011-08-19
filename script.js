@@ -186,11 +186,11 @@
     Game.snake.init(3,20, "right");
     //Init the board.
     Game.board.init(20);
-    if(foodNum === -1) foodNum = 1;
+    if(foodNum === -1) { foodNum = 1; }
     for(var i = 0;i<foodNum;i++) {
     Game.makeFood();
     }
-    }
+  
     //do an initial render
     Game.render();
     //wire up the key events to change teh snake's direction
